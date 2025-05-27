@@ -1,0 +1,81 @@
+#intro{
+    height: calc(100vh - 4rem);
+    width: 100vw;
+    max-width: 75rem;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.bg{
+    position: absolute;
+    z-index: -1;
+    top: -4rem;
+    right: -8rem;
+    object-fit: cover;
+    height: 100vh;
+}
+.introContent{
+    height: 100vh;
+    width: 100vw;
+    padding: 2rem;
+    font-size: 3rem;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.introContent span{
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.795);
+}
+.hello{
+    font-size: 1.75rem;
+    font-weight: 100;
+}
+.introName{
+    color: yellow;
+}
+.introPara{
+    font-size: medium;
+    font-weight: 300;
+}
+.btn{
+    background: rgb(0, 0, 0);
+    color: white;
+    margin: 1rem 0;
+    padding: 7px 7px;
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transition: color 0.4s ease, border-bottom 0.4s ease, padding-bottom 0.4s ease;
+
+}
+.btn:hover{
+    box-shadow: 3px 3px 4px yellow ;
+    transition: color 0.4s ease, border-bottom 0.4s ease, padding-bottom 0.4s ease;
+
+}
+.btn svg{
+    width: 20px;
+    height: 25px;
+    display: flex;
+    
+}
+@media screen and (max-width:840px) {
+    .bg{
+        right: -15vw;
+    }
+    .introContent{
+        font-size: 10vw;
+    }
+    .hello{
+        font-size: 4.5vw;
+
+    }
+}
+@media screen and (max-width:480px) {
+    .bg{
+        right: -20vw;
+    }
+}
