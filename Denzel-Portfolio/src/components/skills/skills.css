@@ -11,7 +11,7 @@
     margin: 0 auto;
 }
 .skillTitle{
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 600;
     padding-top: 3rem;
     margin-bottom: 1.5rem;
@@ -23,11 +23,10 @@
     padding: 0 2rem;
 }
 .skillBars{
-    margin: 1.5rem;
+    display: flex;
+    flex-direction: column;
     width: 100vw;
     max-width: 80%;
-    text-align: left;
-
 }
 .skillBar{
     display: flex;
@@ -35,34 +34,45 @@
     padding: 1.5rem 2rem;
     border-radius: 0.5rem;
     background: rgb(50, 50, 50);
-
 }
-/* .skillBarImg{
-    object-fit: conver;
-    height: 3rem;
+.skillBarImg{
+    object-fit: contain;
+    height: 3rem;   
     width: 3rem;
     margin-right: 2rem;
-
-} */
-
-.skillBarText>p{
-    font-size: 0.9rem;
-    font-weight: 200;
 }
-@media screen and (max-width: 720px) {
-    .skillBarText>p{
-        font-size: 2vw;
-    }
+
+@keyframes rotateInfinite {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
+
+.react-icon-rotate {
+  animation: rotateInfinite 5s linear infinite;
+}
+
+.scroll-animated-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animated-element.fade-in-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 @media screen and (max-width: 480px) {
-    .skillBarText>p{
-        font-size: 3vw;
-    }
-    .skillBarImg{
+    .skillBarImg {
         height: 2.25rem;
         width: 2.25rem;
     }
-    .skillBarText>h2{
+    .skillBarText > h2 {
         font-size: 5vw;
     }
 }

@@ -9,6 +9,22 @@
 body{
     background: rgb(30, 30, 30);
     color: white;
-    overflow: hidden;
-    overflow-y: scroll;
+
+}
+html {
+  scroll-behavior: smooth;
+}
+.section.animate .your-element {
+  animation: fadeInUp 0.7s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

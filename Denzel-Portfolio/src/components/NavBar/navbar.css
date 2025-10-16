@@ -18,20 +18,21 @@
     height: 3rem;
     color: yellow;
 }
-.desktopMenuListItem{
+.desktopMenu a{
     margin: 1rem;
     cursor: pointer;
     color: white;
 }
 
-.desktopMenuListItem:hover{
-    color: rgba(255, 255, 0, 0.753);
+.desktopMenu a:hover{
+    color: yellow;
     padding-bottom: 0.5rem;
     border-bottom: 3px solid yellow;
-    transition: color 0.4s ease, border-bottom 0.4s ease, padding-bottom 0.4s ease;
+    font-size: 1.1rem;
+    transition: all 0.3s ease-in;
 }
 
-.desktopMenuBtn {
+.desktopMenuBtn{
     background: white;
     color: black;
     border: none;
@@ -44,16 +45,18 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     justify-content: space-between;
     align-items: center;
+    position: absolute;
+    right: 20px;
 }
 
-.desktopMenuBtn:hover {
+.desktopMenuBtn:hover{
     background-color: yellow;
     color: black;
-    transform: scale(1.05);
+    transform: scale(1.1);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.desktopMenuBtn a {
+.desktopMenuBtn a{
     text-decoration: none;
     color: inherit;
 }
@@ -61,3 +64,61 @@ button svg{
   width: 30px;
   height: 30px;
 }
+.menu-icon{
+    display: none;
+}
+
+@media screen and (max-width: 840px) {
+    .navbar{
+        position: relative;
+    }
+    .desktopMenu{
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 20px;
+        padding: 3rem;
+        border-radius: 8px;
+        flex-direction: column;
+        gap: 20px;
+        z-index: 100;
+        background: rgb(30,30, 30);
+        border: 1px solid #fff;
+    }
+    .desktopMenu.active{
+        display: flex;
+
+    }
+    .desktopMenu.active a{
+        color: yellow;
+    }
+    .menu-icon{
+        display: block;
+        filter: brightness(0) invert(1);
+    }
+    .desktopMenu.active a {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: staggerFadeIn 0.5s forwards;
+    }
+    .desktopMenu.active a:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+    .desktopMenu.active a:nth-child(2) {
+        animation-delay: 0.25s;
+    }
+    .desktopMenu.active a:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+    .desktopMenu.active a:nth-child(4) {
+        animation-delay: 0.55s;
+    }
+}
+
+@keyframes staggerFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}    
+

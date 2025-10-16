@@ -1,28 +1,47 @@
 #intro{
     height: calc(100vh - 4rem);
-    width: 100vw;
-    max-width: 75rem;
+    max-width: 1000vw;
     margin: 0 auto;
-    overflow: hidden;
-    position: relative;
+    display: flex;
+    gap: 2rem;
+    padding: 3rem;
+    align-items: center;
+    justify-content: space-between;
 }
-.bg{
-    position: absolute;
-    z-index: -1;
-    top: -4rem;
-    right: -8rem;
+
+.image{
+    display: flex;
+    max-height: calc(100vh-4rem);
+    filter: brightness(0.99);
+}
+.image img{
+    opacity: 0;
+    border-radius: 20px;
+    height: 23rem;
+    width: 16rem;
     object-fit: cover;
-    height: 100vh;
+    transform: translateX(50px);
+    animation: slideInImage 1s ease forwards;
+    animation-delay: 1.5s;
+    
+}
+.image img:hover{
+    transition: transform 0.3s ease-in;
+    transform: scale(1.1);
+}
+
+.image-text h2{
+    text-align: center;
 }
 .introContent{
-    height: 100vh;
-    width: 100vw;
     padding: 2rem;
     font-size: 3rem;
     font-weight: 700;
     display: flex;
+    gap: 1rem;
     flex-direction: column;
     justify-content: center;
+
     
 }
 .introContent span{
@@ -31,6 +50,11 @@
 .hello{
     font-size: 1.75rem;
     font-weight: 100;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: dropIn 0.6s ease forwards;
+
 }
 .introName{
     color: yellow;
@@ -38,7 +62,12 @@
 .introPara{
     font-size: medium;
     font-weight: 300;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 3.8s;
 }
+
 .btn{
     background: rgb(0, 0, 0);
     color: white;
@@ -48,12 +77,17 @@
     align-items: center;
     justify-content: center;
     display: flex;
-    transition: color 0.4s ease, border-bottom 0.4s ease, padding-bottom 0.4s ease;
+    transition:  all 0.4s ease-in;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: popIn 0.5s ease forwards;
+    animation-delay: 4.5s;
 
 }
 .btn:hover{
-    box-shadow: 3px 3px 4px yellow ;
-    transition: color 0.4s ease, border-bottom 0.4s ease, padding-bottom 0.4s ease;
+    background:yellow ;
+    color: black;
+    transform: scale(1.05);
 
 }
 .btn svg{
@@ -62,20 +96,105 @@
     display: flex;
     
 }
-@media screen and (max-width:840px) {
-    .bg{
-        right: -15vw;
-    }
-    .introContent{
-        font-size: 10vw;
-    }
-    .hello{
-        font-size: 4.5vw;
+.introText{
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid yellow;
+    width: 0; 
+    animation: typing 2s steps(20, end) forwards, blink 0.75s step-end infinite alternate;
+    animation-delay: 0.8s, 2.8s;
 
-    }
 }
-@media screen and (max-width:480px) {
-    .bg{
-        right: -20vw;
-    }
+.introRole{
+    display: inline-block;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 3s;
 }
+
+
+@media screen and (max-width: 911px){
+  .introContent{
+    padding: 1.5rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+  }
+  .image img{
+    height: 20rem;
+    width: 15rem;
+    border-radius: 2rem;
+  }
+}
+@media screen and (max-width: 700px){
+  #intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 455px){
+  #intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  }
+  .hello{
+    font-size: 1rem;
+  }
+  .introContent{
+    padding: 0.3rem;
+  }
+  .image img{
+    height: 18rem;
+    width: 13rem;
+  }
+  .introContent, .introRole{
+    font-size: 2rem;
+  }
+
+}
+
+
+    @keyframes dropIn {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    @keyframes typing {
+      to {
+        width: 9ch;
+      }
+    }
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+    @keyframes fadeUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    @keyframes slideInImage {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @keyframes popIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
