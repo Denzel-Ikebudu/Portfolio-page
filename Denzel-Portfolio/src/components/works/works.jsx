@@ -3,7 +3,7 @@ import './works.css'
 import image_1 from '../../assets/Screenshot-ecommerce.png'
 import image_2 from '../../assets/ecommerce snip5.png'
 import image_3 from '../../assets/ecommerce snip 2.png'
-import image_4 from '../../assets/portfolio-owah1.png'
+// import image_4 from '../../assets/portfolio-owah1.png'
 import image_5 from '../../assets/portfolio-owah2.png'
 import image_6 from '../../assets/po.png'
 import image_7 from '../../assets/portfolio1.png'
@@ -28,7 +28,7 @@ const Works = () => {
       <h2>My Works</h2>
       <p>Here are the images of some of the websites i have built.</p>
       <div className='portfolio-items'>
-        {[image_1, image_2, image_3, image_4, image_5, 
+        {[image_1, image_2, image_3, image_5, 
         image_6, image_7, image_8].map((img, idx) => (
           <img key={idx} src={img} alt='' onClick={() => handleImageClick(img)} />
         ))}
